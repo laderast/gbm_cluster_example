@@ -1,0 +1,20 @@
+universe = vanilla
+executable = /usr/bin/R
+getenv = TRUE
+arguments = --vanilla
+input = runPancan.R
+output = test.out
+error = test.err
+log = test.log 
+notification = Always
+should_transfer_files = YES
+transfer_input_files = calculate-neighbor-mutations.R,permutation-script.R,pancan.RData 
+# #processor cores requested
+request_cpus = 20
+#Expression for ranking machines - higher the rank value, better the fit for this job
+Rank = TARGET.Cpus
+#Memory requested
+request_memory = 4 GB
+when_to_transfer_output = ON_EXIT
+notify_user = laderast@ohsu.edu
+Queue
